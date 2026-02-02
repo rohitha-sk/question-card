@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Button from './components/Button';
+import Card from './components/Card';
 
 const questions = [
   {
@@ -44,35 +46,7 @@ function App() {
         </button>
         {
           openCard && (
-            <div className="bg-white rounded-xl shadow-lg p-6">
-        {/* Top circles */}
-        <div className="flex justify-between items-center mb-16">
-          <div className={`w-10 h-10 rounded-full ${step === 1 ? 'bg-purple-500' : 'bg-gray-300'} text-white flex items-center justify-center font-semibold`}>
-            { questions[0].id }
-          </div>
-          <div className={`w-10 h-10 rounded-full ${step === 2 ? 'bg-purple-500' : 'bg-gray-300'} text-white flex items-center justify-center font-semibold`}>
-            { questions[1].id } 
-          </div>
-          <div className={`w-10 h-10 rounded-full ${step === 3 ? 'bg-purple-500' : 'bg-gray-300'} text-white flex items-center justify-center font-semibold`}>
-            { questions[2].id }
-          </div>
-        </div>
-
-        {/* Middle text */}
-        <div className="text-center mb-16">
-          <h2 className="text-2xl font-semibold text-gray-800">{step}. {question.question}</h2>
-        </div>
-
-        {/* Bottom buttons */}
-        <div className="flex justify-between">
-          <button onClick={handlePrevious} className={`px-6 py-2 ${step === 1 ? 'bg-gray-300' : 'bg-purple-500'} text-white rounded-full  transition-colors`}>
-            Previous
-          </button>
-          <button onClick={handleNext}  className={`px-6 py-2 ${step ===3 ? 'bg-gray-300' : 'bg-purple-500'} text-white rounded-full  transition-colors`}>
-            Next
-          </button>
-        </div>
-        </div>
+            <Card questions={questions} step={step} question={question} handleNext={handleNext} handlePrevious={handlePrevious} />
           )
         }
       </div>
