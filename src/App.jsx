@@ -37,6 +37,8 @@ function App() {
       setQuestion(questions[step - 2]);
     }
 
+    
+
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="relative w-full max-w-md min-h-[300px]">
